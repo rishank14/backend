@@ -183,7 +183,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 
 const refreshAccessToken = asyncHandler(async (req, res) => {
   // get refresh token from cookies
-  const incomingRefreshToken = req.cookies.refreshToken || req.body;
+  const incomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken;
 
   if (!incomingRefreshToken) {
     throw new ApiError(401, "Please login to access this resource");
